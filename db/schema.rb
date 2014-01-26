@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140123054715) do
+ActiveRecord::Schema.define(version: 20140126214549) do
 
-  create_table "installs", force: true do |t|
-    t.string   "email",                  default: "", null: false
+  create_table "users", force: true do |t|
+    t.string   'email',                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20140123054715) do
     t.datetime "updated_at"
   end
 
-  add_index "installs", ["email"], name: "index_installs_on_email", unique: true
-  add_index "installs", ["reset_password_token"], name: "index_installs_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
