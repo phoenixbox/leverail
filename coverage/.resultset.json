@@ -1,0 +1,19 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/shanerogers/Desktop/dev/leveredge/leverail/app/models/install.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/shanerogers/Desktop/dev/leveredge/leverail/app/helpers/application_helper.rb": [
+        1,
+        null
+      ]
+    },
+    "timestamp": 1390771518
+  }
+}

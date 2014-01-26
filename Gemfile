@@ -33,10 +33,17 @@ gem 'rabl'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
+  gem 'guard'
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-rspec'
   gem 'quiet_assets'
+  gem 'simplecov', require: false
+  gem 'spork', '~> 1.0.0rc4'
+  gem 'guard-spork'
+  gem 'rb-fchange', :require=>false
+  gem 'rb-fsevent', :require=>false
+  gem 'rb-inotify', :require=>false
 end
 
 group :development, :test do
@@ -51,6 +58,7 @@ group :test do
   gem 'email_spec'
   gem 'ffaker'
   gem 'shoulda-matchers'
+  gem 'shoulda-matchers-pundit'
 end
 
 group :doc do
