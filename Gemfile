@@ -39,6 +39,12 @@ group :development do
   gem 'quiet_assets'
 end
 
+group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+  gem 'pry-rails'
+end
+
 group :test do
   gem 'capybara'
   gem 'database_cleaner', '1.0.1'
