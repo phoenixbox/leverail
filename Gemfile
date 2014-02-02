@@ -38,9 +38,9 @@ group :development do
   gem 'guard-rails'
   gem 'guard-rspec'
   gem 'quiet_assets'
-  gem 'simplecov', require: false
   gem 'spork', '~> 1.0.0rc4'
   gem 'guard-spork'
+  gem 'simplecov', require: false
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false

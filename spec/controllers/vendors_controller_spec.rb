@@ -11,14 +11,15 @@ describe Api::V1::VendorsController do
       end
     end
     context "authenticated" do
+      let!(:user) { FactoryGirl.create :user }
+      let!(:vendor) { FactoryGirl.create :vendor }
+
       before(:each) do
-        @valid_user = FactoryGirl.create(:user)
-        @valid_vendor = FactoryGirl.create(:vendor)
-        sign_in(@valid_user)
+        sign_in(user)
       end
       it "renders the index template" do
         get :index, :format => :json
-        expect(JSON.parse(response.body).first).should == JSON.parse(@valid_vendor.to_json)
+        expect(JSON.parse(response.body).first).should == JSON.parse(vendor.to_json)
       end
     end
   end
