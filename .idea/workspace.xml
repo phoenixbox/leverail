@@ -89,10 +89,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vendors_controller.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="vendors_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/vendors_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="161" selection-start="305" selection-end="466" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+            <state line="7" column="29" selection-start="185" selection-end="185" vertical-scroll-proportion="0.10714286" vertical-offset="0" max-vertical-offset="980">
               <folding />
             </state>
           </provider>
@@ -101,16 +101,16 @@
       <file leaf-file-name="index.json.rabl" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/api/v1/vendors/index.json.rabl">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="132" selection-start="153" selection-end="153" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
+            <state line="3" column="0" selection-start="154" selection-end="154" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rabl.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="rabl.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/initializers/rabl.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="38" selection-start="449" selection-end="449" vertical-scroll-proportion="0.1377551" vertical-offset="0" max-vertical-offset="980">
+            <state line="18" column="2" selection-start="801" selection-end="801" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
               <folding />
             </state>
           </provider>
@@ -145,6 +145,7 @@
         <option value="$PROJECT_DIR$/app/controllers/api/v1/vendors_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/vendors/index.json.rabl" />
         <option value="$PROJECT_DIR$/config/initializers/rabl.rb" />
+        <option value="$PROJECT_DIR$/app/views/api/v1/vendors/index.json.rabl" />
       </list>
     </option>
   </component>
@@ -815,13 +816,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="0" selection-start="550" selection-end="550" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="975">
@@ -850,23 +844,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/vendors_controller.rb">
+    <entry file="file://$PROJECT_DIR$/config/initializers/rabl.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="161" selection-start="305" selection-end="466" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+        <state line="18" column="2" selection-start="801" selection-end="801" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/api/v1/vendors/index.json.rabl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="132" selection-start="153" selection-end="153" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
+        <state line="3" column="0" selection-start="154" selection-end="154" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/initializers/rabl.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/vendors_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="38" selection-start="449" selection-end="449" vertical-scroll-proportion="0.1377551" vertical-offset="0" max-vertical-offset="980">
+        <state line="7" column="29" selection-start="185" selection-end="185" vertical-scroll-proportion="0.10714286" vertical-offset="0" max-vertical-offset="980">
           <folding />
         </state>
       </provider>
