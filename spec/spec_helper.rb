@@ -20,6 +20,8 @@ Spork.prefork do
   require 'ffaker'
 
   require 'pundit/rspec'
+
+  Spork.trap_method(Rails::Application::RoutesReloader, :reload!)
 end
 
 Spork.each_run do

@@ -13,54 +13,8 @@
       "/Users/shanerogers/Desktop/dev/leveredge/leverail/app/helpers/application_helper.rb": [
         1,
         null
-      ],
-      "/Users/shanerogers/Desktop/dev/leveredge/leverail/app/controllers/api/v1/vendors_controller.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        null,
-        1,
-        0,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/shanerogers/Desktop/dev/leveredge/leverail/app/controllers/application_controller.rb": [
-        1,
-        null,
-        null,
-        1,
-        null
-      ],
-      "/Users/shanerogers/Desktop/dev/leveredge/leverail/app/models/vendor.rb": [
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
       ]
     },
-    "timestamp": 1391304182
+    "timestamp": 1391363023
   }
 }

@@ -8,6 +8,10 @@ module Api
         respond_with Vendor.all
       end
 
+      def show
+        respond_with Vendor.find(params[:id])
+      end
+
       private
 
       def vendor_params
