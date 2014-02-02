@@ -1,7 +1,7 @@
 Leveredge::Application.routes.draw do
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
 
-  namespace :api, defaults: {format: 'json'} do
+  namespace :api , defaults: {format: 'json'} do
     namespace :v1 do
       root 'vendors#index'
       resources :vendors

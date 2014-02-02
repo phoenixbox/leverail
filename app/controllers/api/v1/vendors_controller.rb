@@ -2,14 +2,14 @@ module Api
   module V1
     class VendorsController < ApplicationController
       respond_to :json
-      before_filter :authenticate_user!
+      #before_filter :authenticate_user!
 
       def index
-        respond_with Vendor.all
+        @vendors = Vendor.all
       end
 
       def show
-        respond_with Vendor.find(params[:id])
+        @vendor = Vendor.find(params[:id])
       end
 
       private
