@@ -3,7 +3,6 @@ module Api
     class SessionsController < Devise::SessionsController
       respond_to :json
       prepend_before_filter :require_no_authentication, :only => [:create ]
-      #include Devise::Controllers::InternalHelpers
 
       before_filter :ensure_params_exist
 
@@ -14,31 +13,11 @@ module Api
 
         if resource.valid_password?(params[:password])
           sign_in("user", resource)
-          render :json=> {:success=>true, :auth_token=>resource.authentication_token, :email=>resource.email}
+          render :json=> {:success=>true, :authentication_token=>resource.authentication_token, :email=>resource.email}
           return
         end
         invalid_login_attempt
       end
-
-      #def create
-      #  # build_resource
-      #  resource = if params[:remember_token]
-      #               resource_from_remember_token
-      #             else
-      #               resource_from_credentials
-      #             end
-      #  return invalid_credentials unless resource
-      #
-      #  data = {
-      #      user_email: resource.email,
-      #      auth_token: resource.authentication_token,
-      #  }
-      #  if params[:remember]
-      #    resource.remember_me!
-      #    data[:remember_token] = remember_token(resource)
-      #  end
-      #  render json: data, status: 201
-      #end
 
       def destroy
         sign_out(resource_name)
