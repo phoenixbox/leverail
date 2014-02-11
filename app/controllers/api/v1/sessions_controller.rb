@@ -8,12 +8,13 @@ module Api
 
 
       def create
+        binding.pry
         resource = User.find_for_database_authentication(:email=>params[:email])
         return invalid_login_attempt unless resource
 
         if resource.valid_password?(params[:password])
           sign_in("user", resource)
-          render :json=> {:success=>true, :authentication_token=>resource.authentication_token, :email=>resource.email}
+          render :json=> {:success=>true, :authentication_token=>resource.authentication_token, :email=>resource.email, :status=>200}
           return
         end
         invalid_login_attempt
@@ -26,12 +27,12 @@ module Api
       protected
       def ensure_params_exist
         return unless params[:email].blank?
-        render :json=>{:success=>false, :message=>"missing user_login parameter"}, :status=>422
+        render :json=>{:success=>false, :message=>"missing user_login parameter", :status=>422}, :status=>422
       end
 
       def invalid_login_attempt
         warden.custom_failure!
-        render :json=> {:success=>false, :message=>"Error with your login or password"}, :status=>401
+        render :json=> {:success=>false, :message=>"Error with your login or password", :status=>401}, :status=>401
       end
 
       def missing_params

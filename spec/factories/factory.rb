@@ -14,7 +14,7 @@ FactoryGirl.define do
     sequence(:website_url)   { |n| "#{Faker::Internet.domain_name}#{n}" }
     sequence(:address)       { |n| "#{Faker::Address.street_address(include_secondary = false)}"}
     city                     { Faker::AddressUS.city}
-    state                    { Faker::AddressUS.state}
+    state                    { Faker::AddressUS.us_state_abbr}
     zip_code                 { Faker::AddressUS.zip_code}
   end
 end
