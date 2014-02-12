@@ -4,20 +4,20 @@ describe Api::V1::VendorsController do
   include Rails.application.routes.url_helpers
   include Devise::TestHelpers
 
-  context "unauthenticated" do
-    context "GET #index" do
-      it "does not render the index template" do
-        get :index
-        flash[:alert].should == "Please sign in or sign up before continuing."
-      end
-    end
-    context "GET #show" do
-      it "does not render the index template" do
-        get :show
-        flash[:alert].should == "Please sign in or sign up before continuing."
-      end
-    end
-  end
+  # context "unauthenticated" do
+  #   context "GET #index" do
+  #     it "does not render the index template" do
+  #       get :index
+  #       flash[:alert].should == "Please sign in or sign up before continuing."
+  #     end
+  #   end
+  #   context "GET #show" do
+  #     it "does not render the index template" do
+  #       get :show
+  #       flash[:alert].should == "Please sign in or sign up before continuing."
+  #     end
+  #   end
+  # endπ
 
   context "authenticated" do
     let!(:user) { FactoryGirl.create :user }
@@ -27,7 +27,8 @@ describe Api::V1::VendorsController do
       sign_in(user)
     end
     context "GET #index" do
-      it "populates and array of vendors" do
+      it "populates an array of vendors" do
+        binding.pry
         get :index, :format => :json
         expect(JSON.parse(response.body).first).to eq JSON.parse(vendor.to_json)
       end

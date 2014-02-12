@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140204052736) do
+ActiveRecord::Schema.define(version: 20140211032008) do
+
+  create_table "pre_qualifications", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "vendor_id"
+    t.boolean  "assigned"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

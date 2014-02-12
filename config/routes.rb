@@ -4,8 +4,10 @@ Leveredge::Application.routes.draw do
     namespace :v1 do
       root 'vendors#index'
       devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, :token_authentication_key => 'authentication_key'
+      resources :users, :only => [:show]
       #devise_for :users, controllers: {sessions: 'sessions'}
       resources :vendors
+      resources :pre_qualifications
     end
   end
 

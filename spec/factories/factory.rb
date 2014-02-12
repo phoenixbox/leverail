@@ -3,6 +3,7 @@ FactoryGirl.define do
     sequence(:email)        { |n| "#{n}#{Faker::Internet.email}" }
     password                'password'
     password_confirmation   'password'
+    authentication_token    { Devise.friendly_token }
   end
   factory :vendor do
     title                    { Faker::Company.name }

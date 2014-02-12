@@ -13,4 +13,8 @@ class Vendor < ActiveRecord::Base
   validates :state, :presence => true
   validates :zip_code, :presence => true
 
+  # Associations
+  has_many :pre_qualifications
+  has_many :users, :through => :pre_qualifications
+
 end

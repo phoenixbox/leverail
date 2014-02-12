@@ -41,6 +41,10 @@ describe Vendor do
     it {should validate_presence_of(:state)}
     it {should validate_presence_of(:zip_code)}
   end
+
+  context '#associations' do
+    it {should have_many(:users).through(:pre_qualifications)}
+  end
 end
 
 
