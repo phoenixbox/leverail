@@ -11,13 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140212031745) do
+ActiveRecord::Schema.define(version: 20140212032129) do
 
   create_table "competitors", force: true do |t|
     t.integer "vendor_id"
     t.integer "competitor_id"
     t.integer "intensity"
   end
+
+  create_table "offers", force: true do |t|
+    t.string   "description"
+    t.string   "summary"
+    t.string   "terms"
+    t.datetime "expiration"
+    t.integer  "value"
+    t.integer  "pre_qualification_id"
+    t.boolean  "converted"
+  end
+
+  add_index "offers", ["pre_qualification_id"], name: "index_offers_on_pre_qualification_id"
 
   create_table "pre_qualifications", force: true do |t|
     t.integer  "user_id"
