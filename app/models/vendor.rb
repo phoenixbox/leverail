@@ -16,5 +16,5 @@ class Vendor < ActiveRecord::Base
   # Associations
   has_many :pre_qualifications
   has_many :users, :through => :pre_qualifications
-
+  has_many :competitors
 end

@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140212024703) do
+ActiveRecord::Schema.define(version: 20140212031745) do
+
+  create_table "competitors", force: true do |t|
+    t.integer "vendor_id"
+    t.integer "competitor_id"
+    t.integer "intensity"
+  end
 
   create_table "pre_qualifications", force: true do |t|
     t.integer  "user_id"
