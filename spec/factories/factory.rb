@@ -17,5 +17,22 @@ FactoryGirl.define do
     city                     { Faker::AddressUS.city}
     state                    { Faker::AddressUS.us_state_abbr}
     zip_code                 { Faker::AddressUS.zip_code}
+
+    # factory :vendor_with_users do
+    #   after_create do |article|
+    #     create(:comment, article: article)
+    #   end
+    # end
+  end
+  factory :competitor do
+    vendor_id
+    competitor_id
+  end
+  factory :pre_qualification do
+    sequence(:start_time) { |n| Time.now }
+    sequence(:end_time) { |n| Time.now + n.days + n.hour }
+  end
+  trait :assigned do
+    assigned true
   end
 end

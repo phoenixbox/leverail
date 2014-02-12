@@ -1,15 +1,21 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'ffaker'
 
 Vendor.destroy_all
+# PreQualification.destroy_all
+
+# u = User.last
 
 10.times do |n|
   puts "Creating vendor number: #{n}"
   FactoryGirl.create(:vendor)
 end
+
+# count = 3
+
+# vendors = Vendor.all
+# u.vendors << vendors.sample(count)
+
+# count.times do |n|
+#   puts "Creating PreQualification: #{n}"
+#   FactoryGirl.create(:pre_qualification, user_id:u.id, vendor_id: u.vendors[n].id)
+# end
