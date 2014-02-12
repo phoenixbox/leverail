@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140211032008) do
+ActiveRecord::Schema.define(version: 20140212024703) do
 
   create_table "pre_qualifications", force: true do |t|
     t.integer  "user_id"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20140211032008) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "pre_qualifications", ["user_id", "vendor_id"], name: "index_pre_qualifications_on_user_id_and_vendor_id", unique: true
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
