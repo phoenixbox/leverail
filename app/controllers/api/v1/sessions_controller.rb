@@ -13,7 +13,9 @@ module Api
 
         if resource.valid_password?(params[:password])
           sign_in("user", resource)
-          render :json=> {:success=>true, :authentication_token=>resource.authentication_token, :email=>resource.email, :status=>200}
+          # render :json=> {:success=>true, :authentication_token=>resource.authentication_token, :email=>resource.email, :status=>200}
+          redirect_to api_v1_user_path(resource)
+          # render :json=> {:success=>true, :user=>resource, :status=>200}
           return
         end
         invalid_login_attempt

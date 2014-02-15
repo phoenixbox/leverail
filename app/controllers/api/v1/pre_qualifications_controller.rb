@@ -21,6 +21,10 @@ module Api
       end
 
       def destroy
+        user = User.find_by_authentication_token(params[:authentication_token])
+        PreQualification.where("user_id = ? AND vendor_id = ?", u.id, params[:vendor_id]).delete
+        binding.pry
+        redirect_to api_v1_user_path user
       end
 
       private
