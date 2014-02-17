@@ -13,7 +13,8 @@ module Api
 
       def create
         user = User.find_by_authentication_token(params[:authentication_token])
-        user.vendors << Vendor.find(params[:vendor_id])
+        vendor = Vendor.find(params[:vendor_id])
+        user.vendors << vendor if !user.vendors.include?(vendor)
         redirect_to api_v1_user_path user
       end
 
@@ -21,10 +22,14 @@ module Api
       end
 
       def destroy
-        user = User.find_by_authentication_token(params[:authentication_token])
-        PreQualification.where("user_id = ? AND vendor_id = ?", u.id, params[:vendor_id]).delete
-        binding.pry
-        redirect_to api_v1_user_path user
+        @user = User.find_by_authentication_token(params[:authentication_token])
+        pre_qual_vendor = PreQualification.where("user_id = ? AND vendor_id = ?", @user.id, params[:vendor_id]).first
+        pre_qual_vendor.delete
+        @user.reload
+        redirect_to api_v1_user_pre_qual_path @user
+        # else
+        #   render :json => { :status => 403, :message => "Request not processed" }
+        # end
       end
 
       private

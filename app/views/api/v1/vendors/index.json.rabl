@@ -5,5 +5,3 @@ attributes :id, :title, :description, :summary, :vendor_type, :thumbnail, :phone
 child(:users) do
   attributes :email
 end
-
-

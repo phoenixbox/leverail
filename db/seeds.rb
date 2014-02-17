@@ -1,9 +1,10 @@
 require 'ffaker'
 
+User.destroy_all
 Vendor.destroy_all
 # PreQualification.destroy_all
 
-# u = User.last
+User.create(email:"rogerssh@tcd.ie", password:12345678, password_confirmation:12345678)
 
 10.times do |n|
   puts "Creating vendor number: #{n}"

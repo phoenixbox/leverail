@@ -6,16 +6,13 @@ module Api
 
       before_filter :ensure_params_exist
 
-
       def create
         resource = User.find_for_database_authentication(:email=>params[:email])
         return invalid_login_attempt unless resource
 
         if resource.valid_password?(params[:password])
           sign_in("user", resource)
-          # render :json=> {:success=>true, :authentication_token=>resource.authentication_token, :email=>resource.email, :status=>200}
           redirect_to api_v1_user_path(resource)
-          # render :json=> {:success=>true, :user=>resource, :status=>200}
           return
         end
         invalid_login_attempt
