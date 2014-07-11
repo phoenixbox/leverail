@@ -4,11 +4,16 @@ User.destroy_all
 Vendor.destroy_all
 # PreQualification.destroy_all
 
-User.create(email:"rogerssh@tcd.ie", password:12345678, password_confirmation:12345678)
+u = User.create(email:"rogerssh@tcd.ie", password:12345678, password_confirmation:12345678)
 
 10.times do |n|
   puts "Creating vendor number: #{n}"
   FactoryGirl.create(:vendor)
+end
+
+10.times do |n|
+	puts "Creating room number: #{n}"
+	FactoryGirl.create(:hotel)
 end
 
 # count = 3

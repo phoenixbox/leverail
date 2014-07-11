@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
 gem 'rabl'
+gem 'oj'
 
 group :development do
   gem 'better_errors'
