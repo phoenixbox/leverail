@@ -1,3 +1,3 @@
-collection @hotels
+collection @hotels => :hotels
 
 attributes :id, :name
