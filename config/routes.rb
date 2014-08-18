@@ -9,6 +9,9 @@ Leveredge::Application.routes.draw do
       resources :vendors, :only => [:index, :show]
       resources :pre_qualifications, param: :vendor_id
       resources :hotels, :only => [:index, :show]
+
+      resources :tags, :only => [:index]
+      resources :suggestions, :only => [:create, :show]
     end
   end
 

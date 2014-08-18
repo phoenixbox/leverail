@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140711011858) do
+ActiveRecord::Schema.define(version: 20140818020528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,28 @@ ActiveRecord::Schema.define(version: 20140711011858) do
   end
 
   add_index "pre_qualifications", ["user_id", "vendor_id"], name: "index_pre_qualifications_on_user_id_and_vendor_id", unique: true, using: :btree
+
+  create_table "suggestions", force: true do |t|
+    t.string  "address"
+    t.string  "canvas_type"
+    t.string  "city"
+    t.string  "image_url"
+    t.string  "state"
+    t.string  "zip_code"
+    t.string  "country"
+    t.decimal "latitude",    precision: 10, scale: 6
+    t.decimal "longitude",   precision: 10, scale: 6
+  end
+
+  create_table "tags", force: true do |t|
+    t.string  "title"
+    t.string  "address"
+    t.string  "city"
+    t.string  "state"
+    t.string  "zip_code"
+    t.decimal "latitude",  precision: 10, scale: 6
+    t.decimal "longitude", precision: 10, scale: 6
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

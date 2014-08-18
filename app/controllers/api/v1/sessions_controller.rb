@@ -7,12 +7,12 @@ module Api
       before_filter :ensure_params_exist
 
       def create
-        resource = User.find_for_database_authentication(:email=>params[:email])
-        return invalid_login_attempt unless resource
+        user = User.find_for_database_authentication(:email=>params[:email])
+        return invalid_login_attempt unless user
 
-        if resource.valid_password?(params[:password])
-          sign_in("user", resource)
-          redirect_to api_v1_user_path(resource)
+        if user.valid_password?(params[:password])
+          sign_in("user", user)
+          redirect_to api_v1_user_path(user)
           return
         end
         invalid_login_attempt

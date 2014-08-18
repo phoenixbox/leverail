@@ -10,6 +10,10 @@ FactoryGirl.define do
     name                   {Faker::Lorem.words(num = 1).join}
   end
 
+  factory :tag do
+    name                   {Faker::Lorem.words(num = 1).join}
+  end
+
   factory :vendor do
     title                    { Faker::Company.name }
     description              { Faker::Lorem.sentence}
