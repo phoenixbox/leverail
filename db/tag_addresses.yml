@@ -1,91 +1,91 @@
 ---
 -
-  address: ~
+  address: "123 Fake Street"
   city: "San Francisco"
   location:
     latitude: 37.766618
     longitude: -122.421475
   state: CA
   title: "Ape Do Good Printing"
-  zip_code: ~
+  zip_code: "91158"
 -
-  address: ~
+  address: "123 Fake Street"
   city: "San Francisco"
   location:
     latitude: 37.766296
     longitude: -122.421459
   state: CA
   title: "Mary and Jesus"
-  zip_code: ~
+  zip_code: "91158"
 -
-  address: ~
+  address: "123 Fake Street"
   city: "San Francisco"
   location:
     latitude: 37.76583
     longitude: -122.421432
   state: CA
   title: "Oscar Grant"
-  zip_code: ~
+  zip_code: "91158"
 -
-  address: ~
+  address: "123 Fake Street"
   city: "San Francisco"
   location:
     latitude: 37.765664
     longitude: -122.421421
   state: CA
   title: "Martin Luther King Jr."
-  zip_code: ~
+  zip_code: "91158"
 -
-  address: ~
+  address: "123 Fake Street"
   city: "San Francisco"
   location:
     latitude: 37.76552
     longitude: -122.421416
   state: CA
   title: "Two-faced Skull"
-  zip_code: ~
+  zip_code: "91158"
 -
-  address: ~
+  address: "123 Fake Street"
   city: "San Francisco"
   location:
     latitude: 37.76549
     longitude: -122.421405
   state: CA
   title: "Mother and Child"
-  zip_code: ~
+  zip_code: "91158"
 -
-  address: ~
+  address: "123 Fake Street"
   city: "San Francisco"
   location:
     latitude: 37.764642
     longitude: -122.416406
   state: CA
   title: "Right to Good Health"
-  zip_code: ~
+  zip_code: "91158"
 -
-  address: ~
+  address: "123 Fake Street"
   city: "San Francisco"
   location:
     latitude: 37.761479
     longitude: -122.406707
   state: CA
   title: "New Generation Health Center"
-  zip_code: ~
+  zip_code: "91158"
 -
-  address: ~
+  address: "123 Fake Street"
   city: "San Francisco"
   location:
     latitude: 37.755295
     longitude: -122.406342
   state: CA
   title: "SFGH Rebuild Community"
-  zip_code: ~
+  zip_code: "91158"
 -
-  address: ~
+  address: "123 Fake Street"
   city: "San Francisco"
   location:
     latitude: 37.753047
     longitude: -122.406154
   state: CA
   title: "Pasado y Futuro"
-  zip_code: ~
+  zip_code: "91158"

@@ -18,6 +18,7 @@ VENDOR_ADDRESSES = YAML.load_file('db/vendor_addresses.yml')
 end
 
 TAG_ADDRESSES = YAML.load_file('db/tag_addresses.yml')
+IMAGE_URLS = YAML.load_file('db/image_urls.yml')
 10.times do |n|
   puts "Creating tag number: #{n}"
   tag = Tag.new
@@ -28,6 +29,7 @@ TAG_ADDRESSES = YAML.load_file('db/tag_addresses.yml')
   tag.zip_code = TAG_ADDRESSES[n]['zip_code']
   tag.latitude = TAG_ADDRESSES[n]['location']['latitude']
   tag.longitude = TAG_ADDRESSES[n]['location']['longitude']
+  tag.image_url = IMAGE_URLS[n]['image_url']
   tag.save
 end
 
