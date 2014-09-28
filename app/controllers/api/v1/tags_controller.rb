@@ -4,13 +4,13 @@ module Api
       respond_to :json
 
       def index
-        @hotels = Tag.all
+        @tags = Tag.all
       end
 
       private
 
       def tag_params
-        params.require(:tag).permit(:user_id, :title, :video_url)
+        params.require(:vendor).permit(:title, :address, :city, :state, :zip_code, :latitude, :longitude, :image_url)
       end
     end
   end
