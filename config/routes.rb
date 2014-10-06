@@ -11,7 +11,7 @@ Leveredge::Application.routes.draw do
       resources :hotels, :only => [:index, :show]
 
       resources :tags, :only => [:index]
-      resources :suggestions, :only => [:create, :show]
+      resources :suggestions, :only => [:create, :show, :index]
     end
   end
 
