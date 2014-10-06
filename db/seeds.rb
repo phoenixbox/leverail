@@ -29,7 +29,7 @@ IMAGE_URLS = YAML.load_file('db/image_urls.yml')
   tag.zip_code = TAG_ADDRESSES[n]['zip_code']
   tag.latitude = TAG_ADDRESSES[n]['location']['latitude']
   tag.longitude = TAG_ADDRESSES[n]['location']['longitude']
-  tag.image_url = IMAGE_URLS[n]['image_url']
+  tag.image_url = 'https://s3-us-west-2.amazonaws.com/artocracy.bananas/12A1EF9D-7109-42BB-B675-0F4BEA5475C9'
   tag.save
 end
 
