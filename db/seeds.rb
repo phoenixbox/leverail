@@ -4,7 +4,7 @@ User.destroy_all
 Vendor.destroy_all
 # PreQualification.destroy_all
 
-u = User.create(email:"rogerssh@tcd.ie", password:12345678, password_confirmation:12345678)
+u = User.create(email:"rogerssh@tcd.ie", password:12345678, password_confirmation:12345678, profile_image_url: "https://scontent-a-pao.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/1456512_10202479209041132_1776449871_n.jpg?oh=55d7de54c815ba7a6c6039c327e1f155&oe=54C1A2AA")
 
 VENDOR_ADDRESSES = YAML.load_file('db/vendor_addresses.yml')
 10.times do |n|
@@ -32,9 +32,6 @@ IMAGE_URLS = YAML.load_file('db/image_urls.yml')
   tag.image_url = 'https://s3-us-west-2.amazonaws.com/artocracy.bananas/12A1EF9D-7109-42BB-B675-0F4BEA5475C9'
   tag.save
 end
-
-# // Public test image
-# https://scontent-a-pao.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/1456512_10202479209041132_1776449871_n.jpg?oh=55d7de54c815ba7a6c6039c327e1f155&oe=54C1A2AA
 
 10.times do |n|
 	puts "Creating hotel number: #{n}"
