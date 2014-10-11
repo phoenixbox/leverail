@@ -37,3 +37,4 @@ end
 	puts "Creating hotel number: #{n}"
 	FactoryGirl.create(:hotel)
 end
+# IMAGE_URLS.each{|url|suggestion.proposals.create(image_url: url['image_url'], proposer_id: u.id)}

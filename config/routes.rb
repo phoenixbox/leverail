@@ -11,7 +11,12 @@ Leveredge::Application.routes.draw do
       resources :hotels, :only => [:index, :show]
 
       resources :tags, :only => [:index]
+
       resources :suggestions, :only => [:create, :show, :index]
+      get 'suggestions/:id/upvote' => 'suggestions#upvote', as: :upvote
+      resources :suggestions do
+        resources :proposal_suggestions, :only => [:index]
+      end
     end
   end
 
