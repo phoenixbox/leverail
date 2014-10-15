@@ -7,6 +7,12 @@ module Api
         @tags = Tag.all
       end
 
+      # u.favorites.create(tag_id: Tag.last)
+      def favorites
+        user = User.find(params[:user_id])
+        @tags = user.tags
+      end
+
       private
 
       def tag_params

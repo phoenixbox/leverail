@@ -11,16 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141009152603) do
+ActiveRecord::Schema.define(version: 20141014052627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "artists", force: true do |t|
+    t.string   "name"
+    t.string   "profile_image_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "competitors", force: true do |t|
     t.integer "vendor_id"
     t.integer "competitor_id"
     t.integer "intensity"
   end
+
+  create_table "favorites", force: true do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "tag_id",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "favorites", ["user_id", "tag_id"], name: "index_favorites_on_user_id_and_tag_id", unique: true, using: :btree
 
   create_table "hotels", force: true do |t|
     t.string   "name"
@@ -92,7 +108,19 @@ ActiveRecord::Schema.define(version: 20141009152603) do
     t.decimal "latitude",  precision: 10, scale: 6
     t.decimal "longitude", precision: 10, scale: 6
     t.string  "image_url"
+    t.integer "artist_id"
   end
+
+  add_index "tags", ["artist_id"], name: "index_tags_on_artist_id", using: :btree
+
+  create_table "upvotes", force: true do |t|
+    t.integer  "suggestion_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "upvotes", ["suggestion_id", "user_id"], name: "index_upvotes_on_suggestion_id_and_user_id", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
