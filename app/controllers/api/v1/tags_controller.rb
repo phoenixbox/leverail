@@ -13,6 +13,10 @@ module Api
         @tags = user.tags
       end
 
+      def artist_work
+        @tags = Tag.artist_work(params[:artist_id])
+      end
+
       private
 
       def tag_params

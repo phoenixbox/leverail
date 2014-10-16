@@ -12,6 +12,7 @@ Leveredge::Application.routes.draw do
 
       resources :tags, :only => [:index]
       get 'tags/favorites' => 'tags#favorites', as: :favorites
+      get 'tags/artist_work' => 'tags#artist_work', :as => :artist_work
 
       resources :suggestions, :only => [:create, :show, :index]
       resources :suggestions do
