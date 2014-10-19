@@ -30,7 +30,6 @@ module Api
       def upvoted
       	begin
 	      	upvote = Upvote.where("user_id = ? AND suggestion_id = ?", params[:user_id], params[:suggestion_id]).first
-	      	upvote.delete
 	      	redirect_to api_v1_upvote_path(upvote)
       	rescue => e
     			render :json=>{:success=>false, :message=>"Could not find upvote", :status=>422}, :status=>422
