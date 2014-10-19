@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141014052627) do
+ActiveRecord::Schema.define(version: 20141019041234) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,14 +101,15 @@ ActiveRecord::Schema.define(version: 20141014052627) do
 
   create_table "tags", force: true do |t|
     t.string  "title"
-    t.string  "address"
     t.string  "city"
     t.string  "state"
     t.string  "zip_code"
-    t.decimal "latitude",  precision: 10, scale: 6
-    t.decimal "longitude", precision: 10, scale: 6
+    t.decimal "latitude",    precision: 10, scale: 6
+    t.decimal "longitude",   precision: 10, scale: 6
     t.string  "image_url"
     t.integer "artist_id"
+    t.string  "canvas_type"
+    t.string  "country"
   end
 
   add_index "tags", ["artist_id"], name: "index_tags_on_artist_id", using: :btree
