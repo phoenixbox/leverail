@@ -18,8 +18,12 @@ Leveredge::Application.routes.draw do
       resources :suggestions do
         resources :proposal_suggestions, :only => [:index]
       end
+
       resources :upvotes, :only => [:create, :show, :destroy]
       get 'upvoted' => 'upvotes#upvoted', :as => :upvoted
+
+      resources :favorites, :only => [:create, :show, :destroy]
+      get 'favorited' => 'favorites#favorited', :as => :favorited
     end
   end
 
