@@ -23,10 +23,11 @@ IMAGE_URLS = YAML.load_file('db/image_urls.yml')
   puts "Creating tag number: #{n}"
   tag = Tag.new
   tag.title = TAG_ADDRESSES[n]['title']
-  tag.address = TAG_ADDRESSES[n]['address']
   tag.city = TAG_ADDRESSES[n]['city']
   tag.state = TAG_ADDRESSES[n]['state']
   tag.zip_code = TAG_ADDRESSES[n]['zip_code']
+  tag.country = 'United States'
+  tag.canvas_type = 'Public Wall'
   tag.latitude = TAG_ADDRESSES[n]['location']['latitude']
   tag.longitude = TAG_ADDRESSES[n]['location']['longitude']
   tag.image_url = 'https://s3-us-west-2.amazonaws.com/artocracy.bananas/12A1EF9D-7109-42BB-B675-0F4BEA5475C9'
