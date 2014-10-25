@@ -6,6 +6,8 @@ Leveredge::Application.routes.draw do
       devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, :token_authentication_key => 'authentication_key'
       resources :users, :only => [:show]
       match 'users/:id' => 'users#show', :via => :delete, :as => :user_pre_qual
+      get 'users/:id/contribution_counts' => 'users#contribution_counts', as: :contribution_counts
+
       resources :vendors, :only => [:index, :show]
       resources :pre_qualifications, param: :vendor_id
       resources :hotels, :only => [:index, :show]

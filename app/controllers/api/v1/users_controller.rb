@@ -7,6 +7,9 @@ module Api
         @user = User.find(params[:id])
       end
 
+      def contribution_counts
+      	@user = User.find(params[:id])
+      end
     end
   end
 end
