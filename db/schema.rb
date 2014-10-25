@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141019041234) do
+ActiveRecord::Schema.define(version: 20141025024240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,7 +72,6 @@ ActiveRecord::Schema.define(version: 20141019041234) do
   create_table "proposal_suggestions", force: true do |t|
     t.integer  "proposal_id"
     t.integer  "suggestion_id"
-    t.integer  "vote_count"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -86,6 +85,15 @@ ActiveRecord::Schema.define(version: 20141019041234) do
     t.datetime "updated_at"
   end
 
+  create_table "suggestion_users", force: true do |t|
+    t.integer  "suggestion_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "suggestion_users", ["suggestion_id", "user_id"], name: "index_suggestion_users_on_suggestion_id_and_user_id", unique: true, using: :btree
+
   create_table "suggestions", force: true do |t|
     t.string  "address"
     t.string  "canvas_type"
@@ -94,9 +102,8 @@ ActiveRecord::Schema.define(version: 20141019041234) do
     t.string  "state"
     t.string  "zip_code"
     t.string  "country"
-    t.decimal "latitude",     precision: 10, scale: 6
-    t.decimal "longitude",    precision: 10, scale: 6
-    t.integer "suggestor_id",                          null: false
+    t.decimal "latitude",    precision: 10, scale: 6
+    t.decimal "longitude",   precision: 10, scale: 6
   end
 
   create_table "tags", force: true do |t|

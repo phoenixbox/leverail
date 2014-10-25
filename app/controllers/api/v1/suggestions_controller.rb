@@ -8,7 +8,8 @@ module Api
       end
 
       def create
-        suggestion = Suggestion.create(suggestion_params)
+        user = User.find(params[:user_id])
+        suggestion = user.suggestions.create(suggestion_params)
         if suggestion
           # TODO: Whats the best way to redirect with authentication
           redirect_url = [api_v1_suggestion_path(suggestion),'?',@user.attributes.slice("email", "authentication_token").to_query].join
@@ -27,8 +28,7 @@ module Api
 
       def suggestion_params
         convert_lat_long_to_bigdecimal
-        params[:suggestion][:suggestor_id] = @user.id
-        params.require(:suggestion).permit(:address, :latitude, :longitude, :state, :city, :zip_code, :country, :canvas_type, :image_url, :suggestor_id)
+        params.require(:suggestion).permit(:address, :latitude, :longitude, :state, :city, :zip_code, :country, :canvas_type, :image_url, :user_id)
       end
 
       def convert_lat_long_to_bigdecimal

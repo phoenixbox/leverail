@@ -10,6 +10,4 @@ node(:proposal_count) do |suggestion|
 	suggestion.proposals.count
 end
 
-node(:upvote_count) do |suggestion|
-	suggestion.proposal_suggestions.first.vote_count
-end
+node(:upvote_count) { |suggestion| suggestion.upvotes.count }
