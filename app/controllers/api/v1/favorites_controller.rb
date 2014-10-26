@@ -4,8 +4,8 @@ module Api
       respond_to :json
 
       def create
-        piece = Tag.find(params[:piece_id])
-        favorite = piece.favorites.create(user_id: @user.id)
+        tag = Tag.find(params[:piece_id])
+        favorite = tag.favorites.create(user_id: params[:user_id])
         if favorite.valid?
         	redirect_to api_v1_favorite_path(favorite)
         else
@@ -20,8 +20,9 @@ module Api
       def destroy
       	begin
 	      	favorite = Favorite.find(params[:id])
+	      	tag = favorite.tag
 	      	favorite.delete
-	      	render :json=>{:success=>true, :message=>"Favorited deleted", :status=>200}, :status=>200
+					redirect_to api_v1_tag_path(tag)
       	rescue => e
     			render :json=>{:success=>false, :message=>"Could not find favorite", :status=>422}, :status=>422
       	end
