@@ -5,7 +5,7 @@ module Api
 
       def create
         suggestion = Suggestion.find(params[:suggestion_id])
-        upvote = suggestion.upvotes.create(user_id: @user.id)
+        upvote = suggestion.upvotes.create(user_id: params[:user_id])
         if upvote.valid?
         	redirect_to api_v1_upvote_path(upvote)
         else
