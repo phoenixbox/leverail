@@ -7,12 +7,11 @@ module Api
         @tags = Tag.all
       end
 
-      # u.favorites.create(tag_id: Tag.last)
-      def favorites
-        user = User.find(params[:user_id])
-        @tags = user.tags
+      def show
+        @tag = Tag.find(params[:id])
       end
 
+      # TODO: The data model needs to be reflect the artist entities
       def artist_work
         @tags = Tag.artist_work(params[:artist_id])
       end

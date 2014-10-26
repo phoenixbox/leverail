@@ -10,6 +10,11 @@ module Api
       def contribution_counts
       	@user = User.find(params[:id])
       end
+
+      def favorites
+        user = User.find(params[:id])
+        @tags = user.tags
+      end
     end
   end
 end

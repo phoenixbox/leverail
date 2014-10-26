@@ -6,15 +6,17 @@ Leveredge::Application.routes.draw do
       devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, :token_authentication_key => 'authentication_key'
       resources :users, :only => [:show]
       match 'users/:id' => 'users#show', :via => :delete, :as => :user_pre_qual
+
       get 'users/:id/contribution_counts' => 'users#contribution_counts', as: :contribution_counts
+      get 'users/:id/favorites' => 'users#favorites', as: :favorites
 
       resources :vendors, :only => [:index, :show]
       resources :pre_qualifications, param: :vendor_id
       resources :hotels, :only => [:index, :show]
 
-      resources :tags, :only => [:index]
-      get 'tags/favorites' => 'tags#favorites', as: :favorites
       get 'tags/artist_work' => 'tags#artist_work', :as => :artist_work
+      resources :tags, :only => [:index, :show]
+      match 'tags/:id' => 'tags#show', :via => :delete
 
       resources :suggestions, :only => [:create, :show, :index]
       resources :suggestions do
