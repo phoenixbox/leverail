@@ -22,7 +22,7 @@ module Api
 	      	upvote = Upvote.find(params[:id])
           suggestion = upvote.suggestion
 	      	upvote.delete
-	      	redirect_to api_v1_suggestion_path(suggestion)
+	      	redirect_to api_v1_suggestion_path(suggestion), status: 303
       	rescue => e
     			render :json=>{:success=>false, :message=>"Could not find upvote", :status=>422}, :status=>422
       	end
