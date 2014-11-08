@@ -14,24 +14,28 @@ module Api
       end
 
       def show
-      	@favorite = Favorite.find(params[:id])
+        @favorite = Favorite.find(params[:id])
       end
 
       def destroy
-      	begin
-	      	favorite = Favorite.find(params[:id])
-	      	tag = favorite.tag
-	      	favorite.delete
-					redirect_to api_v1_tag_path(tag)
-      	rescue => e
-    			render :json=>{:success=>false, :message=>"Could not find favorite", :status=>422}, :status=>422
-      	end
+        begin
+          favorite = Favorite.find(params[:id])
+          tag = favorite.tag
+          favorite.delete
+          redirect_to api_v1_tag_path(tag)
+        rescue => e
+          render :json=>{:success=>false, :message=>"Could not find favorite", :status=>422}, :status=>422
+        end
       end
 
       def favorited
       	begin
 	      	favorite = Favorite.where("user_id = ? AND tag_id = ?", params[:user_id], params[:tag_id]).first
-	      	redirect_to api_v1_favorite_path(favorite)
+          if favorite
+  	      	redirect_to api_v1_favorite_path(favorite)
+          else
+            render :json=>{:success=>false, :message=>"Could not find favorite", :status=>422}, :status=>422
+          end
       	rescue => e
     			render :json=>{:success=>false, :message=>"Could not find favorite", :status=>422}, :status=>422
       	end
