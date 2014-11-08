@@ -20,8 +20,9 @@ module Api
       def destroy
       	begin
 	      	upvote = Upvote.find(params[:id])
+          suggestion = upvote.suggestion
 	      	upvote.delete
-	      	render :json=>{:success=>true, :message=>"Upvoted deleted", :status=>200}, :status=>200
+	      	redirect_to api_v1_suggestion_path(suggestion)
       	rescue => e
     			render :json=>{:success=>false, :message=>"Could not find upvote", :status=>422}, :status=>422
       	end

@@ -18,6 +18,7 @@ Leveredge::Application.routes.draw do
       resources :tags, :only => [:index, :show]
       match 'tags/:id' => 'tags#show', :via => :delete
 
+      match 'suggestions/:id' => 'suggestions#show', :via => :delete
       resources :suggestions, :only => [:create, :show, :index]
       resources :suggestions do
         resources :proposal_suggestions, :only => [:index]

@@ -5,3 +5,7 @@ attributes :id, :address, :latitude, :longitude, :state, :city, :zip_code, :coun
 child @user => :suggestor do
   attributes :id, :email, :profile_image_url
 end
+
+node :upvote_count do |suggestion|
+	suggestion.upvotes.count
+end
