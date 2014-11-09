@@ -6,6 +6,6 @@ class Suggestion < ActiveRecord::Base
 	has_many :upvotes
 	has_many :users, :through => :upvotes
 
-	has_many :suggestion_users
-	has_many :users, :through => :suggestion_users
+	belongs_to :user
+	belongs_to :artist
 end

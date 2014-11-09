@@ -2,6 +2,7 @@ Leveredge::Application.routes.draw do
 
   namespace :api , defaults: {format: 'json'} do
     namespace :v1 do
+      devise_for :artists
       root 'vendors#index'
       devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, :token_authentication_key => 'authentication_key'
       resources :users, :only => [:show]
@@ -18,7 +19,7 @@ Leveredge::Application.routes.draw do
       resources :tags, :only => [:index, :show]
       match 'tags/:id' => 'tags#show', :via => :delete
 
-      match 'suggestions/:id' => 'suggestions#show', :via => :delete
+      # match 'suggestions/:id' => 'suggestions#show', :via => :delete
       resources :suggestions, :only => [:create, :show, :index]
       resources :suggestions do
         resources :proposal_suggestions, :only => [:index]
