@@ -21,15 +21,14 @@ Leveredge::Application.routes.draw do
 
       # match 'suggestions/:id' => 'suggestions#show', :via => :delete
       resources :suggestions, :only => [:create, :show, :index]
-      resources :suggestions do
-        resources :proposal_suggestions, :only => [:index]
-      end
+      get 'suggestions/:id/proposals' => 'suggestions#suggestions_proposals'
 
       resources :upvotes, :only => [:create, :show, :destroy]
       get 'upvoted' => 'upvotes#upvoted', :as => :upvoted
 
       resources :favorites, :only => [:create, :show, :destroy]
       get 'favorited' => 'favorites#favorited', :as => :favorited
+
     end
   end
 

@@ -24,6 +24,11 @@ module Api
         @suggestion = Suggestion.find(params[:id])
       end
 
+      def suggestions_proposals
+        s = Suggestion.find(params[:id])
+        @proposals = s.proposals
+      end
+
       private
 
       def suggestion_params
