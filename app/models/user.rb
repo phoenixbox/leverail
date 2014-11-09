@@ -17,8 +17,7 @@ class User < ActiveRecord::Base
   has_many :favorites
   has_many :tags, :through => :favorites
 
-  has_many :suggestion_users
-  has_many :suggestions, :through => :suggestion_users
+  has_many :suggestions
 
   def ensure_authentication_token
     if authentication_token.blank?
