@@ -33,7 +33,7 @@ module Api
 
       def suggestion_params
         convert_lat_long_to_bigdecimal
-        params.require(:suggestion).permit(:address, :latitude, :longitude, :state, :city, :zip_code, :country, :canvas_type, :image_url, :user_id)
+        params.require(:suggestion).permit(:address, :title, :latitude, :longitude, :state, :city, :zip_code, :country, :canvas_type, :image_url, :user_id)
       end
 
       def convert_lat_long_to_bigdecimal

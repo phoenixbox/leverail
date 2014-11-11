@@ -33,7 +33,7 @@ module Api
 
       def piece_params
         convert_lat_long_to_bigdecimal
-        params.require(:piece).permit(:title,:city,:state,:zip_code,:latitude,:longitude,:image_url,:artist_id,:canvas_type,:country,:user_id,:address)
+        params.require(:piece).permit(:title, :city, :state, :zip_code, :latitude, :longitude, :image_url, :artist_id, :canvas_type, :country, :user_id, :address)
       end
 
       def convert_lat_long_to_bigdecimal
