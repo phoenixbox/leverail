@@ -3,11 +3,10 @@ Leveredge::Application.routes.draw do
   namespace :api , defaults: {format: 'json'} do
     namespace :v1 do
       devise_for :artists
-      root 'vendors#index'
+
       devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, :token_authentication_key => 'authentication_key'
       resources :users, :only => [:show]
       match 'users/:id' => 'users#show', :via => :delete, :as => :user_pre_qual
-
       get 'users/:id/contribution_counts' => 'users#contribution_counts', as: :contribution_counts
       get 'users/:id/favorites' => 'users#favorites', as: :favorites
 
@@ -16,7 +15,7 @@ Leveredge::Application.routes.draw do
       resources :hotels, :only => [:index, :show]
 
       get 'tags/artist_work' => 'tags#artist_work', :as => :artist_work
-      resources :tags, :only => [:index, :show]
+      resources :tags, :only => [:index, :show, :create]
       match 'tags/:id' => 'tags#show', :via => :delete
 
       # match 'suggestions/:id' => 'suggestions#show', :via => :delete

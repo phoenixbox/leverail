@@ -15,7 +15,8 @@ class User < ActiveRecord::Base
   has_many :suggestions, :through => :upvotes
 
   has_many :favorites
-  has_many :tags, :through => :favorites
+
+  has_many :tags
 
   has_many :suggestions
 

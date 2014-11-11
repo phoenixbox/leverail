@@ -5,4 +5,5 @@ class Tag < ActiveRecord::Base
 	belongs_to :user
 
 	scope :artist_work, ->(id) { where(artist_id: id) }
+	scope :user_contributions, ->(id) { where(user_id: id) }
 end
