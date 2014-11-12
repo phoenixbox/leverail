@@ -6,6 +6,10 @@ child :artist => :artist do
   attributes :id, :email, :profile_image_url
 end
 
+child :user => :user do
+  attributes :id, :email, :profile_image_url
+end
+
 node :favorite_count do |tag|
 	tag.favorites.count
 end
