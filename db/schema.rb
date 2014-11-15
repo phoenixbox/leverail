@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141111064943) do
+ActiveRecord::Schema.define(version: 20141115071117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,34 +92,38 @@ ActiveRecord::Schema.define(version: 20141111064943) do
   end
 
   create_table "suggestions", force: true do |t|
-    t.string  "address"
-    t.string  "canvas_type"
-    t.string  "city"
-    t.string  "image_url"
-    t.string  "state"
-    t.string  "zip_code"
-    t.string  "country"
-    t.decimal "latitude",    precision: 10, scale: 6
-    t.decimal "longitude",   precision: 10, scale: 6
-    t.integer "user_id"
-    t.string  "title"
+    t.string   "address"
+    t.string   "canvas_type"
+    t.string   "city"
+    t.string   "image_url"
+    t.string   "state"
+    t.string   "zip_code"
+    t.string   "country"
+    t.decimal  "latitude",    precision: 10, scale: 6
+    t.decimal  "longitude",   precision: 10, scale: 6
+    t.integer  "user_id"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "suggestions", ["user_id"], name: "index_suggestions_on_user_id", using: :btree
 
   create_table "tags", force: true do |t|
-    t.string  "title"
-    t.string  "city"
-    t.string  "state"
-    t.string  "zip_code"
-    t.decimal "latitude",    precision: 10, scale: 6
-    t.decimal "longitude",   precision: 10, scale: 6
-    t.string  "image_url"
-    t.integer "artist_id"
-    t.string  "canvas_type"
-    t.string  "country"
-    t.integer "user_id"
-    t.string  "address"
+    t.string   "title"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip_code"
+    t.decimal  "latitude",    precision: 10, scale: 6
+    t.decimal  "longitude",   precision: 10, scale: 6
+    t.string   "image_url"
+    t.integer  "artist_id"
+    t.string   "canvas_type"
+    t.string   "country"
+    t.integer  "user_id"
+    t.string   "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "tags", ["artist_id"], name: "index_tags_on_artist_id", using: :btree

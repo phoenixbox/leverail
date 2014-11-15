@@ -4,7 +4,7 @@ module Api
       respond_to :json
 
       def index
-        @tags = Tag.all
+        @tags = Tag.all(:order => 'created_at DESC', :limit => 10)
       end
 
       def show
